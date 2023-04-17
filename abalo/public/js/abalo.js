@@ -1,6 +1,7 @@
 // setup the navigation
 
-const COOKIES_STATE_KEY = 'cookies_state';
+const KEY_COOKIE_STATE = 'cookies_state';
+const KEY_CART = 'cart';
 
 const navigation_items = [
     {
@@ -26,6 +27,10 @@ const navigation_items = [
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
+    // due to the assignment, we need to clear the cart
+    // updateCart([])
+
+
     validateNav();
     validateCookiesConsent();
 });
@@ -60,7 +65,7 @@ function validateNav() {
 
 function validateCookiesConsent() {
     // check if it was shown via the state
-    let cookies_state = localStorage.getItem(COOKIES_STATE_KEY) === "true";
+    let cookies_state = localStorage.getItem(KEY_COOKIE_STATE) === "true";
     if(cookies_state && cookies_state === true) return
 
     // load the element
@@ -80,7 +85,7 @@ function cookiesResponse(userResponse) {
     }
 
     // save the state
-    localStorage.setItem(COOKIES_STATE_KEY, userResponse)
+    localStorage.setItem(KEY_COOKIE_STATE, userResponse)
 
     // load the element
     let cookies_overlay = document.getElementById("cookies_consent");
@@ -88,4 +93,83 @@ function cookiesResponse(userResponse) {
         // hide the element
         cookies_overlay.style.display = 'none';
     }
+}
+
+function getCart() {
+    let cart_items = localStorage.getItem(KEY_CART)
+    return JSON.parse(cart_items ?? "[]");
+}
+
+function getCartProduct(payload) {
+    if(!payload) return null
+
+    const cart_items = getCart();
+
+    let product_index = cart_items.findIndex(e => parseInt(e.id) == parseInt(payload.id));
+
+
+    return cart_items[product_index];
+}
+
+function queueCart(payload) {
+    if(!payload) return;
+
+    let product = getCartProduct(payload);
+
+    if(product) {
+        // exists, we should dequeue
+        dequeueCart(payload);
+    } else {
+        // doesn't exist, we should enqueue
+        enqueueCart(payload);
+    }
+}
+
+function enqueueCart(payload) {
+    if(!payload) return;
+
+    let cart_items = getCart();
+    cart_items.push(payload)
+
+    updateCart(cart_items);
+    updateCartItem(payload);
+}
+
+function dequeueCart(payload, is_from_view = false) {
+    if(!payload) return;
+
+    let cart_items = getCart();
+    cart_items.splice(cart_items.findIndex(e => e.id == payload.id), 1)
+
+    updateCart(cart_items);
+    updateCartItem(payload);
+}
+
+function updateCart(payload) {
+    // save into local storage
+    localStorage.setItem(KEY_CART, JSON.stringify(payload));
+}
+
+function updateCartItem(payload) {
+    if(!payload) return;
+
+    let cart_button = document.getElementById(`cart_button_${payload.id}`)
+    let cart_span = document.getElementById(`cart_span_${payload.id}`)
+    let cart = document.getElementById(`cart`)
+
+    if(!cart_button || !cart_span || !cart) return;
+
+    let product = getCartProduct(payload);
+
+    if(product) {
+        cart_span.innerText = "Remove";
+        cart_button.classList.remove("btn-outline-dark");
+        cart_button.classList.add("btn-dark");
+    } else {
+        cart_span.innerText = "Add";
+        cart_button.classList.remove("btn-dark");
+        cart_button.classList.add("btn-outline-dark");
+    }
+
+    cart.innerText = getCart().length
 }
