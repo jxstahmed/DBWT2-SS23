@@ -14,7 +14,7 @@ use App\Models\AbArticle;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
 
 Route::get('/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login');

@@ -31,11 +31,11 @@ document.getElementById('maxPreis').innerText = getMaxPreis(data);
 
 function getMinPreis()
 {
-    let min = 9999999;
+    let min = null;
     let name;
     for (let i = 0; i< data['produkte'].length; i++)
     {
-        if(data['produkte'][i]['preis'] < min)
+        if(min == null || data['produkte'][i]['preis'] < min)
         {
             min = data['produkte'][i]['preis'];
             name = data['produkte'][i]['name'];

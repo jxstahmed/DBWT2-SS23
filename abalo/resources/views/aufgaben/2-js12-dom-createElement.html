@@ -4,18 +4,21 @@
     <meta charset="UTF-8">
     <title>2-js12-dom-createElement.html</title>
 </head>
-<body>
+<body id="body">
 
 <script>
     let form = document.createElement("form");
-    form.setAttribute('method',"post");
-    form.setAttribute('action',"form.php");
+    form.setAttribute('onsubmit',"return false");
+    //form.setAttribute('method',"post");
+    //form.setAttribute('action',"form.php");
 
     let name = document.createElement("input");
     name.setAttribute('type',"text");
     name.setAttribute('name',"name");
+    name.setAttribute('id', 'inp');
 
     let drop = document.createElement("select");
+    drop.setAttribute('id', 'drp')
     let o1 = document.createElement("option");
     o1.setAttribute('value', 0);
     o1.appendChild(document.createTextNode('Option 1'));
@@ -28,6 +31,13 @@
     let button = document.createElement("input");
     button.setAttribute('type',"submit");
     button.setAttribute('value',"Abschicken");
+    button.addEventListener("click", () => {
+        let drp = document.getElementById("drp");
+        let inp = document.getElementById("inp");
+        let elem = document.createElement('p')
+        elem.innerText = `[${drp.options[drp.selectedIndex].text}] ${inp.value}`
+        document.body.appendChild(elem)
+    }, false);
 
     form.appendChild(name);
     form.appendChild(drop);

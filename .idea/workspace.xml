@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="25196fc2-1a0c-41ba-b569-5736f7a84b90" name="Changes" comment="" />
+    <list default="true" id="25196fc2-1a0c-41ba-b569-5736f7a84b90" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Aufgaben.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Aufgaben.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abalo/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abalo/resources/views/aufgaben/2-js10-dom.html" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/resources/views/aufgaben/2-js10-dom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abalo/resources/views/aufgaben/2-js11-dom-get.html" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/resources/views/aufgaben/2-js11-dom-get.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abalo/resources/views/aufgaben/2-js12-dom-createElement.html" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/resources/views/aufgaben/2-js12-dom-createElement.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abalo/resources/views/aufgaben/data.js" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/resources/views/aufgaben/data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abalo/resources/views/welcome.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/abalo/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/routes/web.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,7 +22,9 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/abalo/composer.json</pharConfigPath>
-    <execution />
+    <execution>
+      <phar pharPath="C:\Users\Ahmed\PhpstormProjects\DBWT2\bin\composer.phar" interpreterId="758f22ba-02d2-42f6-80de-afbc0cf0e7de" />
+    </execution>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -20,6 +32,9 @@
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -141,6 +156,9 @@
     </include_path>
   </component>
   <component name="ProjectId" id="2NbcqWcFKDYyQpAMEJ6sJOTlMUI" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -157,7 +175,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "vcs.Git",
+    "settings.editor.selected.configurable": "reference.webide.settings.project.settings.php.composer",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -202,10 +220,27 @@
       <workItem from="1680820948055" duration="595000" />
       <workItem from="1681055762483" duration="195000" />
       <workItem from="1681734130675" duration="363000" />
+      <workItem from="1681737597366" duration="195000" />
+      <workItem from="1681737814711" duration="7567000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

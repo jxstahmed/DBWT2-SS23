@@ -1,0 +1,68 @@
+<!DOC2-js14-cookiYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-js15-objekte.html</title>
+</head>
+<body>
+
+<script>
+    let car = {
+        name: '',
+        type: '',
+        getName: () => {return this.name},
+        getType: () => {return this.type},
+        setName: (val) => {this.name = val},
+        setType: (val) => {this.type = val},
+    };
+    car.setName('Car');
+    car.setType('JSON');
+    writeToConsole(car, car.getName(), car.getType());
+
+    function CarFunction() {
+
+        this.getName = () => {return this.name};
+        this.getType = () => {return this.type};
+        this.setName = (val) => {this.name = val};
+        this.setType = (val) => {this.type = val};
+    }
+
+    class ObjectClass {
+        #name = '';
+        #type = '';
+
+        getName() {
+            return this.#name;
+        }
+
+        getType() {
+            return this.#type;
+        }
+
+        setName(name) {
+            this.#name = name;
+        }
+
+        setType(type) {
+            this.#type = type;
+        }
+    }
+
+    function writeToConsole(obj, name, type) {
+        console.log(`type[${typeof obj}], name=<${name}>, type=<${type}>`);
+    }
+
+
+    car = new ObjectClass();
+    car.setName('Car');
+    car.setType('class');
+    writeToConsole(ObjectClass, car.getName(), car.getType());
+
+    car = new CarFunction();
+    car.setName('Car');
+    car.setType('function');
+    writeToConsole(CarFunction, car.name, car.type);
+</script>
+
+</body>
+</html>

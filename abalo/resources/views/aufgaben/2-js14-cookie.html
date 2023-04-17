@@ -1,0 +1,26 @@
+<!DOC2-js14-cookiYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-js14-cookie.html</title>
+</head>
+<body>
+
+<script>
+    let counter = -1;
+    let cookies = document.cookie
+    cookies = cookies.split(";")
+    cookies.forEach(cookie => {
+        if(cookie.includes('counter')) {
+            let val = cookie.split('=');
+            counter = parseInt(val[1]);
+            counter++;
+        }
+    })
+
+    console.log(`Wert vom Counter: ${counter}`)
+    document.cookie = `counter=${counter};`
+</script>
+
+</body>
+</html>

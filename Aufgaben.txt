@@ -67,6 +67,9 @@ Beide sprachen haben generic variables wie let und var.
 
 C++ und JS nutzen beide das ; als Zeilenende.
 
+Syntax von Kommentaren sind gleich.
+
+Gleiche vor definierte variablen [similar keywords] wie break, continue und etc.
 
 Unterschiede ->
 C++ besitzt eine strenge Typisierung, welche bei JavaScript nicht vorhanden ist.

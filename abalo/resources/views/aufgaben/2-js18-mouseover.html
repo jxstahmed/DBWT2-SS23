@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-js18-mouseover.html</title>
+</head>
+<body>
+
+<script>
+
+    document.body.style.backgroundColor = '#232323';
+    let button = document.createElement("div");
+    button.style.position = 'absolute';
+    button.style.width = '100px';
+    button.style.height = '50px';
+    button.style.right = '50%';
+    button.style.top = '50%';
+    button.style.backgroundColor = 'white';
+    button.addEventListener("mouseenter", () => {
+        button.style.backgroundColor = 'green';
+    }, false);
+
+    button.addEventListener("mouseleave", () => {
+        button.style.backgroundColor = 'white';
+    }, false);
+
+
+    document.body.appendChild(button);
+</script>
+
+</body>
+</html>

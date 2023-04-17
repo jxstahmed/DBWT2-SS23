@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-js17-click.html</title>
+</head>
+<body>
+
+
+<script>
+
+let colors = ['red', 'yellow', 'green'];
+let index = -1;
+
+// default state
+toggleColor();
+
+let button = document.createElement("input");
+    button.setAttribute('type',"submit");
+    button.style.position = 'absolute';
+    button.style.right = '50%';
+    button.style.top = '50%';
+    button.setAttribute('value',"Toggle");
+    button.addEventListener("click", () => {
+        // call when clicked
+        toggleColor();
+        if((index + 1) >= colors.length) index = -1;
+    }, false);
+
+
+function toggleColor() {
+index++;
+        document.body.style.backgroundColor = colors[index];
+        }
+
+document.body.appendChild(button);
+
+</script>
+
+
+</body>
+</html>

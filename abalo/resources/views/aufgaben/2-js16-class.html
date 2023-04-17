@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-js16-class.html</title>
+</head>
+<body>
+
+<script>
+
+class User {
+        #first_name = '';
+        #last_name = '';
+
+        getFirstName() {
+            return this.#first_name;
+        }
+
+        getLastName() {
+            return this.#last_name;
+        }
+
+        setFirstName(first_name) {
+            this.#first_name = first_name;
+        }
+
+        setLastName(last_name) {
+            this.#last_name = last_name;
+        }
+    }
+
+class Buyer extends User {
+    #lastBuy = '';
+
+     getLastBuy() {
+        return this.#lastBuy;
+     }
+
+     setLastbuy(lastBuy) {
+        this.#lastBuy = lastBuy;
+     }
+}
+
+let ahmed = new User();
+ahmed.setFirstName("Ahmad");
+ahmed.setLastName("AHMAAAAD");
+
+let buyer = new Buyer();
+buyer.setFirstName("Mohammad");
+buyer.setLastName("Mo");
+buyer.setLastbuy("RTX 3090");
+
+console.log(ahmed);
+console.log(buyer);
+
+</script>
+
+</body>
+</html>
