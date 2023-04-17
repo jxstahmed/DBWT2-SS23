@@ -20,4 +20,7 @@ Route::get('/', function () {
 Route::get('/login', [App\Http\Controllers\AuthController::class, 'login'])->name('login');
 Route::get('/logout', [App\Http\Controllers\AuthController::class, 'logout'])->name('logout');
 Route::get('/isloggedin', [App\Http\Controllers\AuthController::class, 'isloggedin'])->name('haslogin');
+
 Route::get('/articles', [App\Http\Controllers\AbArticlesController::class, 'getSearch']);
+Route::post('/articles', [App\Http\Controllers\AbArticlesController::class, 'createArticle']);
+Route::get('/newarticle', [App\Http\Controllers\AbArticlesController::class, 'getCreateArticleRouter'])->name("create_article");

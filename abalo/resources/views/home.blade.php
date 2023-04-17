@@ -9,25 +9,8 @@
 
 @endif
 
-@section("header")
-    <ul id="nav" class="abalo nav">
-    </ul>
-@endsection
-
-@section("main")
+@section("content")
     <div id="main">
         <p>Me main amigo</p>
     </div>
-@endsection
-
-
-@section("footer")
-    <footer>
-        <hr>
-        <ul>
-            <li>(c) Abalo GmbH</li>
-            <li>Ahmed Jumaa &amp; Mohammad Hammado</li>
-            <li id="impressum"><a href="#impressum">Impressum</a></li>
-        </ul>
-    </footer>
 @endsection

@@ -9,7 +9,6 @@ class AbArticle extends Model
     protected $table = 'ab_article';
 
     protected $fillable = [
-
       'id',
       'ab_name',
       'ab_price',

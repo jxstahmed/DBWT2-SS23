@@ -1,3 +1,118 @@
-.abalo .nav {
+body {
+    font-family: 'Nunito', sans-serif;;
+}
 
+.abalo_nav {
+
+}
+
+.abalo_cookies_consent {
+    position: fixed;
+    bottom: 20px;
+    left: 40px;
+    width: 300px;
+    height: 325px;
+    border-radius: 4px;
+}
+
+.abalo_shadow {
+    -webkit-box-shadow: 0 0 8px 2px rgba(0,0,0,0.1) !important;
+    -moz-box-shadow: 0 0 8px 2px rgba(0,0,0,0.1) !important;
+    box-shadow: 0 0 8px 2px rgba(0,0,0,0.1) !important;
+    transition: box-shadow 0.2s ease-in-out;
+}
+
+
+.text-font-caption-less, .text-font-caption-less .v-text-field__suffix, .text-font-caption-less td {
+    font-size: 0.65rem !important;
+    letter-spacing: 0.0333333333em !important;
+    line-height: 0.75rem;
+}
+
+.text-font-caption, .text-font-caption .v-text-field__suffix, .text-font-caption td {
+    font-size: 0.75rem !important;
+    letter-spacing: 0.0333333333em !important;
+    line-height: 0.95rem;
+}
+
+.text-font-caption-more, .text-font-caption-more .v-text-field__suffix, .text-font-caption-more td {
+    font-size: 0.85rem !important;
+    letter-spacing: 0.0178571429em !important;
+    line-height: 1.1rem;
+}
+
+.text-font-body-less, .text-font-body-less .v-text-field__suffix, .text-font-body-less td {
+    font-size: 0.95rem !important;
+    letter-spacing: 0.03125em !important;
+    line-height: 1.15rem;
+}
+
+.text-font-body, .text-font-body .v-text-field__suffix, .text-font-body td {
+    font-size: 1.05rem !important;
+    letter-spacing: 0.03125em !important;
+    line-height: 1.15rem;
+}
+
+.text-font-body-more, .text-font-body .v-text-field__suffix, .text-font-body td {
+    font-size: 1.15rem !important;
+    letter-spacing: 0.03125em !important;
+    line-height: 1.15rem;
+}
+
+.text-font-subtitle-less, .text-font-subtitle-less .v-text-field__suffix, .text-font-subtitle-less td {
+    font-size: 1.25rem !important;
+    letter-spacing: 0.0071428571em !important;
+    line-height: 1.2rem;
+}
+
+.text-font-subtitle, .text-font-subtitle .v-text-field__suffix, .text-font-subtitle td {
+    font-size: 1.35rem !important;
+    letter-spacing: 0.0071428571em !important;
+    line-height: 1.3rem;
+}
+
+.text-font-subtitle-more, .text-font-subtitle-more .v-text-field__suffix, .text-font-subtitle-more td {
+    font-size: 1.45rem !important;
+    letter-spacing: 0.009375em !important;
+    line-height: 1.4rem;
+}
+
+.text-font-title-less, .text-font-title-less .v-text-field__suffix, .text-font-title-less td {
+    font-size: 1.55rem !important;
+    letter-spacing: 0.009375em !important;
+    line-height: 1.5rem;
+}
+
+.text-font-title, .text-font-title .v-text-field__suffix, .text-font-title td {
+    font-size: 1.65rem !important;
+    letter-spacing: 0.0125em !important;
+    line-height: 1.6rem;
+}
+
+.font-weight-medium {
+    font-weight: 500 !important;
+}
+
+.font-weight-semibold {
+    font-weight: 600 !important;
+}
+
+.font-weight-bold {
+    font-weight: 700 !important;
+}
+
+.font-weight-extrabold {
+    font-weight: 800 !important;
+}
+
+.fill-width {
+    width: 100% !important;
+}
+
+.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.flex-grow-0 {
+    flex-grow: 0;
 }
