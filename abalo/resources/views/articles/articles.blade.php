@@ -16,7 +16,7 @@
                 <thead>
                 <tr>
                     <th scope="col">Name</th>
-                    <th scope="col">Price2</th>
+                    <th scope="col">Price</th>
                     <th scope="col"> </th>
                 </tr>
                 </thead>
