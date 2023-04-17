@@ -33,6 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     validateNav();
     validateCookiesConsent();
+    validateCartViewItems();
 });
 
 
@@ -128,14 +129,16 @@ function queueCart(payload) {
 function enqueueCart(payload) {
     if(!payload) return;
 
+
     let cart_items = getCart();
     cart_items.push(payload)
 
     updateCart(cart_items);
     updateCartItem(payload);
+    validateCartViewItems();
 }
 
-function dequeueCart(payload, is_from_view = false) {
+function dequeueCart(payload) {
     if(!payload) return;
 
     let cart_items = getCart();
@@ -143,6 +146,7 @@ function dequeueCart(payload, is_from_view = false) {
 
     updateCart(cart_items);
     updateCartItem(payload);
+    validateCartViewItems();
 }
 
 function updateCart(payload) {
@@ -162,14 +166,71 @@ function updateCartItem(payload) {
     let product = getCartProduct(payload);
 
     if(product) {
-        cart_span.innerText = "Remove";
+        cart_span.innerText = "-";
         cart_button.classList.remove("btn-outline-dark");
         cart_button.classList.add("btn-dark");
     } else {
-        cart_span.innerText = "Add";
+        cart_span.innerText = "+";
         cart_button.classList.remove("btn-dark");
         cart_button.classList.add("btn-outline-dark");
     }
 
     cart.innerText = getCart().length
+}
+
+function validateCartViewItems() {
+    let cart_view = document.getElementById("cart_view");
+    if(cart_view) {
+        if(cart_view.style.display !== 'none') {
+            loadCartViewItems();
+        }
+    }
+}
+
+function toggleCartViewItems() {
+    let cart_view = document.getElementById("cart_view");
+    if(cart_view) {
+        if(cart_view.style.display === 'none') {
+            cart_view.style.display = 'initial';
+            loadCartViewItems();
+        } else {
+            cart_view.style.display = 'none';
+        }
+    }
+}
+
+
+function loadCartViewItems() {
+    const cart_items = getCart();
+
+    let tbody = document.getElementById("cart_view_tbody");
+    if(tbody) {
+        // delete all children
+        tbody.innerHTML = '';
+
+        cart_items.forEach(item => {
+            let tr = document.createElement("tr");
+            tr.innerHTML = `
+            <tr> 
+                <td class="text-font-caption-less align-self-center" style="vertical-align: middle">${item.name}</td>
+                <td class="text-font-caption-less align-self-center" style="vertical-align: middle">${item.price}€</td>
+                <td> 
+                    <button style="min-width: 25px" class="btn-dark text-font-caption-less font-weight-semibold btn btn-sm" id="cart_view_button_${item.id}" 
+                    onClick="">
+                        <span id="cart_view_span_${item.id}" class="font-weight-bold text-font-caption-less"> - </span> 
+                    </button>
+                </td> 
+            </tr>
+            `
+
+            tbody.appendChild(tr);
+
+            let btn = document.getElementById(`cart_view_button_${item.id}`)
+            if(btn) {
+                btn.onclick = () => {
+                    dequeueCart({id: item.id})
+                }
+            }
+        })
+    }
 }

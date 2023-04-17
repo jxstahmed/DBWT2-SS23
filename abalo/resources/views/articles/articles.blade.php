@@ -20,35 +20,16 @@
                     <th scope="col"> </th>
                 </tr>
                 </thead>
-                <tbody>
+                <tbody id="cart_view_tbody">
 
                 </tbody>
-                @foreach ($articles as $article)
-                    <tr>
-                        <td class="text-font-caption-less">{{ $article->ab_name }}</td>
-                        <td class="text-font-caption-less">{{ $article->ab_price / 1000}}€</td>
-                        <td>
-                            <button style="min-width: 60px"
-                                    class="btn-dark text-font-caption-less font-weight-semibold btn btn-sm" id="cart_view_button_{{$article->id}}"
-                                    onclick="dequeueCart({id: '{{ $article->id }}'}, true)"
-                            >
-
-                            <span id="cart_view_span_{{$article->id}}" class="font-weight-bold text-font-caption-less">
-                                Remove
-                            </span>
-                                <span><i style="font-size: 12px; vertical-align: middle;" class="bi bi-cart ml-2"></i></span>
-                            </button>
-                        </td>
-                    </tr>
-                @endforeach
-                <tbody>
             </table>
         </div>
     </div>
 
 
     <div class="col-12 text-end align-self-center">
-        <button style="min-width: 60px"
+        <button style="min-width: 60px" onclick="toggleCartViewItems()"
                 class="text-font-caption font-weight-bold btn btn-sm btn-outline-dark">
             <span class="font-weight-bold text-font-caption-more" id="cart">
                 <script>
@@ -103,9 +84,9 @@
             </tbody>
             @foreach ($articles as $article)
                 <tr>
-                    <td class="text-font-caption-less">{{ $article->ab_name }}</td>
-                    <td class="text-font-caption-less">{{ $article->ab_price / 1000}}€</td>
-                    <td class="text-font-caption-less">{{ $article->ab_description }}</td>
+                    <td class="text-font-caption-less" style="vertical-align: middle">{{ $article->ab_name }}</td>
+                    <td class="text-font-caption-less" style="vertical-align: middle">{{ $article->ab_price / 1000}}€</td>
+                    <td class="text-font-caption-less" style="vertical-align: middle">{{ $article->ab_description }}</td>
                     <td>
                     @php($bild = glob("articlesimages/{$article->id}.*"))
                     @if(empty($bild[0]) === false)
@@ -113,9 +94,9 @@
                     @endif
                     </td>
                     <td>
-                        <button style="min-width: 60px"
+                        <button style="min-width: 30px"
                                 class="text-font-caption-less font-weight-semibold btn btn-sm" id="cart_button_{{$article->id}}"
-                                onclick="queueCart({id: '{{ $article->id }}', name: '{{ $article->name }}', price: '{{ $article->price }}' })"
+                                onclick="queueCart({id: '{{ $article->id }}', name: '{{ $article->ab_name }}', price: '{{ $article->ab_price / 1000 }}' })"
 
                         >
 
@@ -124,13 +105,13 @@
                                     "use strict"
                                     if(document.getElementById("cart_button_{{$article->id}}") && document.getElementById("cart_span_{{$article->id}}")) {
                                         if(getCartProduct({id: {{$article->id}}})) {
-                                            document.getElementById("cart_span_{{$article->id}}").innerText = "Remove";
+                                            document.getElementById("cart_span_{{$article->id}}").innerText = "-";
 
                                             document.getElementById("cart_button_{{$article->id}}").classList.remove("btn-outline-dark");
 
                                             document.getElementById("cart_button_{{$article->id}}").classList.add("btn-dark");
                                         } else {
-                                            document.getElementById("cart_span_{{$article->id}}").innerText = "Add";
+                                            document.getElementById("cart_span_{{$article->id}}").innerText = "+";
 
                                             document.getElementById("cart_button_{{$article->id}}").classList.remove("btn-dark");
 
@@ -139,7 +120,6 @@
                                     }
                                 </script>
                             </span>
-                            <span><i style="font-size: 12px; vertical-align: middle;" class="bi bi-cart ml-2"></i></span>
                         </button>
                     </td>
                 </tr>
