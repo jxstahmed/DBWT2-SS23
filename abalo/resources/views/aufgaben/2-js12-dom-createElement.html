@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2-js12-dom-createElement.html</title>
+</head>
+<body>
+
+<script>
+    let form = document.createElement("form");
+    form.setAttribute('method',"post");
+    form.setAttribute('action',"form.php");
+
+    let name = document.createElement("input");
+    name.setAttribute('type',"text");
+    name.setAttribute('name',"name");
+
+    let drop = document.createElement("select");
+    let o1 = document.createElement("option");
+    o1.setAttribute('value', 0);
+    o1.appendChild(document.createTextNode('Option 1'));
+    let o2 = document.createElement("option");
+    o2.setAttribute('value', 0);
+    o2.appendChild(document.createTextNode('Option 2'));
+    drop.appendChild(o1);
+    drop.appendChild(o2);
+
+    let button = document.createElement("input");
+    button.setAttribute('type',"submit");
+    button.setAttribute('value',"Abschicken");
+
+    form.appendChild(name);
+    form.appendChild(drop);
+    form.appendChild(button);
+
+    document.getElementsByTagName('body')[0].appendChild(form);
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,89 @@
+Aufgabe 2:
+Code-Completion [Ctrl+Space]:
+Vereinfacht das Programmieren, da die IDE hilft bei bestimmte Funktionen & co. direkt zu schreiben.
+Damit spart man sich das Tippen und oft einen großen Aufwand.
+
+Database Tool Window:
+Durch eine direkte Datenbank Ansicht in der IDE, spart man sich das hin und her zwischen der IDE und dem Datenbankverwaltungstool.
+Dadurch kann man Änderungen und Anpassungen viel schneller checken und weiter machen.
+
+Skripte:
+Durch das Erstellen von Skripte, kann man sich dinge welche immer wieder ausgeführt werden sparen und einfach per Knopf-Druck ausführen, anstatt dies immer im Terminal per Hand auszuführen.
+So wurde auch das "php artisan serve" genutzt.
+
+Versionsverwaltung:
+Funktionen wie GIT vereinfachen es Teams die zusammenarbeit, da jedes Teammitglied alleine an einer Aufgabe arbeiten kann und am Ende kann alles zusammengefügt werden.
+Ebenso hat man eine möglichkeit, Version welche fälschlicherweise beschädigt wurden einfach wieder herzustellen.
+
+
+Aufgabe 3:
+a)
+Laut recherchen handelt es sich beim Chrome Browser um den meistgenutzen Browser sowohl auf dem Desktop als auch auf mobilen geräten.
+Danach folgt der Safari Browser von Apple.
+
+b)
+Statistiken, Berichte, Umfragen
+
+(Statista.com | Kinsta.com | etc.)
+
+c)
+Alle modernen Browser unterstützen die ECMAScripts 1-6
+
+ES5:
+Chrome -> 23
+Firefox -> 21
+IE -> 9* (nur mit "use strict")
+Edge -> 10
+Safari -> 6
+Opera -> 15
+
+ES6:
+Chrome -> 51
+Firefox -> 52
+Edge -> 14
+Safari -> 10
+Opera -> 38
+
+ECMAScript 2016:
+Chrome -> 52
+Firefox -> 54
+Edge -> 14
+Safari -> 10.1
+Opera -> 39
+
+d)
+Wir denken, dass es am sinnvollsten wäre Abalo für die Browser Chrome, Safari und Edge/Firefox umzusetzen.
+Da es sich bei diesen Browsern um die meistgenutzten handelt und das am schlausten wäre.
+
+Aufgabe 4:
+
+Gemeinsamkeiten ->
+Eine Gemeinsamkeit der beiden Sprachen sind Dinge, die man nutzen kann.
+Dabei ist die Rede von Schleifen, Blöcke und Verzweigungen.
+
+Beide Sprachen Unterstützen das Object orientierte programmieren.
+
+Beide sprachen haben generic variables wie let und var.
+
+C++ und JS nutzen beide das ; als Zeilenende.
+
+
+Unterschiede ->
+C++ besitzt eine strenge Typisierung, welche bei JavaScript nicht vorhanden ist.
+Somit kann bei JS eine Variable sowohl einmal eine Zahl aber auch ein String sein. Ebenso ist etwas nie "null".
+
+In C++ wird ein vergleich durch "==" gemacht, jedoch wird in JS lieber direkt ein vergleich durch "===" gemacht.
+
+C++ hat Methoden welche sich in einer Klasse befinden.
+In JS gibt es keine direkten Methoden, sondern Funktionen. Diese werden anders als in C++ nicht direkt Objekten zugewiesen.
+
+In JavaScript kann eine Variable nach dem Verwenden erst deklariert werden, jedoch ist dies in C++ nicht möglich.
+Dies führt zu einem Fehler.
+
+Bei C++ handelt es sich um eine Compiled Sprache, dadurch muss der Code erst Compiled werden bevor dieser genutzt werden kan.
+Jedoch ist JS eine interpretierte Sprache, wo durch diese einfach ausgeführt werden kann ohne vorheriges Compilen.
+
+Die Geschwindigkeiten der beiden Sprachen liegen auch einigermaßen auseinander, was auch mit dem voherigen Punkt zu tun hat.
+Jedoch ist dies Okay, da beide Sprachen andere Nutzungsgründe haben.
+C++ wird eher für schwere berechnungen genutzt und bietet sich für Spiele oder tiefgründige Codes an.
+JS jedoch ist eher für die Webanwendung genutzt, für interaktive Elemente oder kleine Berechnungen/Funktionen.
