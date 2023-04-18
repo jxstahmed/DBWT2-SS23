@@ -28,7 +28,7 @@ const navigation_items = [
 
 document.addEventListener("DOMContentLoaded", function () {
     // due to the assignment, we need to clear the cart
-    // updateCart([])
+    updateCart([])
 
 
     validateNav();
@@ -152,6 +152,7 @@ function dequeueCart(payload) {
 function updateCart(payload) {
     // save into local storage
     localStorage.setItem(KEY_CART, JSON.stringify(payload));
+
 }
 
 function updateCartItem(payload) {
@@ -211,15 +212,15 @@ function loadCartViewItems() {
         cart_items.forEach(item => {
             let tr = document.createElement("tr");
             tr.innerHTML = `
-            <tr> 
+            <tr>
                 <td class="text-font-caption-less align-self-center" style="vertical-align: middle">${item.name}</td>
                 <td class="text-font-caption-less align-self-center" style="vertical-align: middle">${item.price}€</td>
-                <td> 
-                    <button style="min-width: 25px" class="btn-dark text-font-caption-less font-weight-semibold btn btn-sm" id="cart_view_button_${item.id}" 
+                <td>
+                    <button style="min-width: 25px" class="btn-dark text-font-caption-less font-weight-semibold btn btn-sm" id="cart_view_button_${item.id}"
                     onClick="">
-                        <span id="cart_view_span_${item.id}" class="font-weight-bold text-font-caption-less"> - </span> 
+                        <span id="cart_view_span_${item.id}" class="font-weight-bold text-font-caption-less"> - </span>
                     </button>
-                </td> 
+                </td>
             </tr>
             `
 

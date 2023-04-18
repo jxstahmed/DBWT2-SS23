@@ -4,8 +4,7 @@
 
 @section("content")
 
-    <div class="row p-2 py-4 abalo_cart abalo_shadow align-content-start" id="cart_view"
-        >
+    <div class="row p-2 py-4 abalo_cart abalo_shadow align-content-start" id="cart_view" style="display: none">
 
         <div class="col-12">
             <p class="text-font-subtitle-less text-center font-weight-bold">Cart</p>

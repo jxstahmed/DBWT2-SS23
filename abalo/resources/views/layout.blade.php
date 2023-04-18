@@ -62,6 +62,8 @@
                     </div>
 
                     <script>
+                        "use strict"
+
                         let message_alert_box = document.getElementById("message_alert_box");
                         let message_alert = document.getElementById("message_alert");
                         if (message_alert_box && message_alert) {
