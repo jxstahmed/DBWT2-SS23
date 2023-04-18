@@ -23,7 +23,7 @@
         </div>
 
         <div class="col-12 text-center" style="max-height: 200px; overflow-y: scroll; overflow-x: hidden;">
-            <table class="table">
+            <table class="table table-striped">
                 <tbody id="cart_view_tbody">
                 </tbody>
             </table>
