@@ -31,10 +31,7 @@
         <button style="min-width: 60px" onclick="toggleCartViewItems()"
                 class="text-font-caption font-weight-bold btn btn-sm btn-outline-dark">
             <span class="font-weight-bold text-font-caption-more" id="cart">
-                <script>
-                "use strict"
-                    document.getElementById("cart").innerText = getCart().length;
-                </script>
+                0
             </span>
             <span><i style="font-size: 14px; vertical-align: top;" class="bi bi-cart ml-2"></i></span>
         </button>

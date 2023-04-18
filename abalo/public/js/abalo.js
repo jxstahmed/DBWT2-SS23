@@ -1,7 +1,9 @@
-// setup the navigation
-
 const KEY_COOKIE_STATE = 'cookies_state';
 const KEY_CART = 'cart';
+
+
+// due to the assignment, we need to clear the cart
+updateCart([])
 
 const navigation_items = [
     {
@@ -27,8 +29,6 @@ const navigation_items = [
 ];
 
 document.addEventListener("DOMContentLoaded", function () {
-    // due to the assignment, we need to clear the cart
-    updateCart([])
 
 
     validateNav();
@@ -185,6 +185,11 @@ function validateCartViewItems() {
         if(cart_view.style.display !== 'none') {
             loadCartViewItems();
         }
+    }
+
+    let cart_icon = document.getElementById("cart")
+    if(cart_icon) {
+        cart_icon.innerText = getCart().length
     }
 }
 
