@@ -10,8 +10,8 @@
             <p class="text-font-subtitle-less text-center font-weight-bold">Cart</p>
         </div>
 
-        <div class="col-12 text-center mt-2" style="max-height: 240px; overflow-y: scroll; overflow-x: hidden;">
-            <table class="table">
+        <div class="col-12 text-center mt-2">
+            <table class="table mb-0 pb-0">
                 <thead>
                 <tr>
                     <th scope="col">Name</th>
@@ -19,8 +19,12 @@
                     <th scope="col"> </th>
                 </tr>
                 </thead>
-                <tbody id="cart_view_tbody">
+            </table>
+        </div>
 
+        <div class="col-12 text-center" style="max-height: 200px; overflow-y: scroll; overflow-x: hidden;">
+            <table class="table">
+                <tbody id="cart_view_tbody">
                 </tbody>
             </table>
         </div>
