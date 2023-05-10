@@ -1,0 +1,36 @@
+SpiderMonkey is provided by the Mozilla team (https://spidermonkey.dev/)
+Javascript V8 is provided by the Chrome team (https://v8.dev/)
+JavascriptCore is provided by the Apple team (https://developer.apple.com/documentation/javascriptcore)
+
+Both are similar in the syntax and have differences in the compling/recompiling methods. SpiderMonkey converts the code to bytecode, whilst V8 converts it to machine code, which results in faster execution times.
+
+JavascriptCore has a different syntax. The support is minimal to Safari browsers and is better suited to work with apple echosystem.
+
+An example of Prototype in JavascriptCore:
+
+Source: https://developer.apple.com/documentation/javascriptcore/1451747-jsobjectsetprototype
+
+
+// couldn't find any proper example
+
+
+An example of Prototype in Javascript V8/SpiderMonkey:
+
+Source: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/setPrototypeOf
+
+function Human(name, level) {
+  this.name = name;
+  this.level = level;
+}
+
+Human.prototype.speak = function () {
+  return `${this.name} says hello.`;
+};
+
+const superHuman = new Human("Clark Kent", 1);
+superHuman.speak();
+
+
+=========================
+M3
+We decide to implement and utilize the V8. It's better in execution time, supported in major environments and has great support by Google, which is known for its best practice. Not to mention that the differences between V8 and SpiderMonkey are not relevant yet to our work and won't have any impact on our project.

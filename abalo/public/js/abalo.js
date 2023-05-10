@@ -3,7 +3,7 @@ const KEY_CART = 'cart';
 
 
 // due to the assignment, we need to clear the cart
-updateCart([])
+// updateCart([])
 
 const navigation_items = [
     {
@@ -28,12 +28,13 @@ const navigation_items = [
     }
 ];
 
+
+
 document.addEventListener("DOMContentLoaded", function () {
-
-
+    loadCart();
     validateNav();
     validateCookiesConsent();
-    validateCartViewItems();
+
 });
 
 
@@ -96,6 +97,38 @@ function cookiesResponse(userResponse) {
     }
 }
 
+function loadCart() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("GET", "/api/articles/shoppingcart");
+    xhttp.onreadystatechange = function() {
+        if(xhttp.readyState === 4) {
+            if(xhttp.status === 200) {
+                const response = JSON.parse(xhttp.responseText)
+                let items = response.items.map(e => {
+                    return {
+                        ab_name: e.article.ab_name,
+                        ab_price: e.article.ab_price,
+                        ab_description: e.article.ab_description,
+                        image: e.article.image,
+                        ab_shoppingcart_id: e.ab_shoppingcart_id,
+                        id: e.ab_article_id,
+                    }
+                })
+                updateCart(items)
+                validateCartViewItems();
+            } else {
+                console.error(xhttp.statusText);
+            }
+        }
+    }
+
+    xhttp.onerror = function(){
+        console.error(xhttp.statusText);
+    };
+
+    xhttp.send();
+}
+
 function getCart() {
     let cart_items = localStorage.getItem(KEY_CART)
     return JSON.parse(cart_items ?? "[]");
@@ -129,30 +162,65 @@ function queueCart(payload) {
 function enqueueCart(payload) {
     if(!payload) return;
 
+    let formData = new FormData();
+    formData.append("articleid", payload.id)
 
-    let cart_items = getCart();
-    cart_items.push(payload)
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/api/articles/shoppingcart");
+    xhttp.onreadystatechange = function() {
+        if(xhttp.readyState === 4) {
+            if(xhttp.status === 200) {
+                let cart_items = getCart();
+                console.log(payload)
+                cart_items.push(payload)
+                updateCart(cart_items);
+                updateCartItem(payload);
+                validateCartViewItems();
+            } else {
+                console.error(xhttp.statusText);
+            }
+        }
+    }
 
-    updateCart(cart_items);
-    updateCartItem(payload);
-    validateCartViewItems();
+    xhttp.onerror = function(){
+        console.error(xhttp.statusText);
+    };
+
+    xhttp.send(formData);
 }
+
 
 function dequeueCart(payload) {
     if(!payload) return;
 
-    let cart_items = getCart();
-    cart_items.splice(cart_items.findIndex(e => e.id == payload.id), 1)
 
-    updateCart(cart_items);
-    updateCartItem(payload);
-    validateCartViewItems();
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("POST", `/api/articles/shoppingcart/${payload.ab_shoppingcart_id ?? 0}/articles/${payload.id}`);
+    xhttp.onreadystatechange = function() {
+        if(xhttp.readyState === 4) {
+            if(xhttp.status === 200) {
+                let cart_items = getCart();
+                cart_items.splice(cart_items.findIndex(e => e.id == payload.id), 1)
+
+                updateCart(cart_items);
+                updateCartItem(payload);
+                validateCartViewItems();
+            } else {
+                console.error(xhttp.statusText);
+            }
+        }
+    }
+
+    xhttp.onerror = function(){
+        console.error(xhttp.statusText);
+    };
+
+    xhttp.send();
 }
 
 function updateCart(payload) {
     // save into local storage
     localStorage.setItem(KEY_CART, JSON.stringify(payload));
-
 }
 
 function updateCartItem(payload) {
@@ -218,8 +286,8 @@ function loadCartViewItems() {
             let tr = document.createElement("tr");
             tr.innerHTML = `
             <tr>
-                <td class="text-font-caption-less align-self-center" style="vertical-align: middle">${item.name}</td>
-                <td class="text-font-caption-less align-self-center" style="vertical-align: middle">${item.price}€</td>
+                <td class="text-font-caption-less align-self-center" style="vertical-align: middle">${item.ab_name}</td>
+                <td class="text-font-caption-less align-self-center" style="vertical-align: middle">${item.ab_price / 1000}€</td>
                 <td>
                     <button style="min-width: 25px" class="btn-dark text-font-caption-less font-weight-semibold btn btn-sm" id="cart_view_button_${item.id}"
                     onClick="">

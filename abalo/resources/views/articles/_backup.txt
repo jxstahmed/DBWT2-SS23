@@ -1,0 +1,43 @@
+<tr>
+    <td class="text-font-caption-less" style="vertical-align: middle">{{ $article->ab_name }}</td>
+    <td class="text-font-caption-less" style="vertical-align: middle">{{ $article->ab_price / 1000}}€
+    </td>
+    <td class="text-font-caption-less"
+        style="vertical-align: middle">{{ $article->ab_description }}</td>
+    <td>
+        @php($bild = glob("articlesimages/{$article->id}.*"))
+        @if(empty($bild[0]) === false)
+        <img src="{{$bild[0]}}" width="50px">
+        @endif
+    </td>
+    <td>
+        <button style="min-width: 30px"
+                class="text-font-caption-less font-weight-semibold btn btn-sm"
+                id="cart_button_{{$article->id}}"
+                onclick="queueCart({id: '{{ $article->id }}', name: '{{ $article->ab_name }}', price: '{{ $article->ab_price / 1000 }}' })"
+
+        >
+
+                            <span id="cart_span_{{$article->id}}" class="font-weight-bold text-font-caption-less">
+                                <script>
+                                    "use strict"
+                                    if (document.getElementById("cart_button_{{$article->id}}") && document.getElementById("cart_span_{{$article->id}}")) {
+                                        if (getCartProduct({id: {{$article->id}}})) {
+                                            document.getElementById("cart_span_{{$article->id}}").innerText = "-";
+
+                                            document.getElementById("cart_button_{{$article->id}}").classList.remove("btn-outline-dark");
+
+                                            document.getElementById("cart_button_{{$article->id}}").classList.add("btn-dark");
+                                        } else {
+                                            document.getElementById("cart_span_{{$article->id}}").innerText = "+";
+
+                                            document.getElementById("cart_button_{{$article->id}}").classList.remove("btn-dark");
+
+                                            document.getElementById("cart_button_{{$article->id}}").classList.add("btn-outline-dark");
+                                        }
+                                    }
+                                </script>
+                            </span>
+        </button>
+    </td>
+</tr>

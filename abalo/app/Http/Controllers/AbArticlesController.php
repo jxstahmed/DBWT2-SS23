@@ -34,7 +34,7 @@ class AbArticlesController extends Controller {
         ));
 
         if ($v->fails()) {
-            return redirect("/newarticle?message=Please validate your input!<br>" . implode(" | ", $v->messages()->all()));
+            return response()->json(["message" => "Please validate your input! " . implode(" | ", $v->messages()->all())], 200);
         }
 
         $article_name = $request->get("article_name");
@@ -49,7 +49,7 @@ class AbArticlesController extends Controller {
             "ab_createdate" => Carbon::now()
         ]);
 
-        return redirect()->route("create_article", ["message" => "Article has been created!"]);
+        return response()->json(["message" => "Article has been created!"], 200);
     }
 
 }

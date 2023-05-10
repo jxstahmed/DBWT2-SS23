@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ArticlesAPIController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
-    return $request->user();
-});
+Route::get('/articles', [ArticlesAPIController::class, "getArticles_api"]);
+Route::post('/articles', [ArticlesAPIController::class, "createArticles_api"]);
+
+
+Route::get('/articles/shoppingcart', [ArticlesAPIController::class, "getCartItems_api"]);
+Route::post('/articles/shoppingcart', [ArticlesAPIController::class, "addCartItem_api"]);
+Route::post('/articles/shoppingcart/{shoppingcardid}/articles/{articleId}', [ArticlesAPIController::class, "removeCartItem_api"]);
+
