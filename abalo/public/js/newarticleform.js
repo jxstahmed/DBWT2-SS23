@@ -14,14 +14,13 @@ function createForm() {
 
 
     let form = document.createElement("form");
-    form.setAttribute('method',"post");
-    form.setAttribute('action',"/articles");
 
 
     let token_value = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
     let token = document.createElement("input");
     token.setAttribute("type", "hidden");
     token.setAttribute("name", "_token");
+    token.setAttribute("id", "_token");
     token.setAttribute("value", token_value);
 
     let row = document.createElement("div");
@@ -62,23 +61,69 @@ function createForm() {
     description.setAttribute("rows", "4");
     description.style.resize = "none";
 
-
     col_description.appendChild(description);
-
 
     let button = document.createElement("input");
     button.className = "mt-2 text-font-caption btn-block font-weight-bold btn btn-dark"
     button.setAttribute('type',"button");
     button.setAttribute('value',"Speichern");
-    button.addEventListener("click", () => {
-        form.submit();
+    button.addEventListener("click", ev => {
+        ev.preventDefault();
+        sendViaAjax();
+        return false;
     }, false);
+
+    let message = document.createElement("p");
+    message.className = "mt-2 text-font-caption font-weight-bold"
+    message.setAttribute('id', 'message');
+
 
     form.appendChild(token);
     form.appendChild(col_name);
     form.appendChild(col_price);
     form.appendChild(col_description);
     form.appendChild(button);
+    form.appendChild(message);
 
     parent.appendChild(form);
+}
+
+function sendViaAjax() {
+    let formData = new FormData();
+
+    let article_name = document.getElementById("article_name").value
+    let article_price = document.getElementById("article_price").value
+    let article_description = document.getElementById("article_description").value
+    let _token = document.getElementById("_token").value
+
+    formData.append("article_name", article_name);
+    formData.append("article_price", article_price);
+    formData.append("article_description", article_description);
+
+    const xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/api/articles");
+    xhttp.setRequestHeader("X-CSRF-TOKEN", _token);
+    xhttp.onreadystatechange = function() {
+        if(xhttp.readyState === 4) {
+            if(xhttp.status === 200) {
+                const response = JSON.parse(xhttp.responseText)
+                document.getElementById("message").innerText = `ID: ${response.id}, ${response.message}`
+            } else {
+                try {
+                    document.getElementById("message").innerText = JSON.parse(xhttp.responseText).message
+                } catch (e) {
+                    document.getElementById("message").innerText = xhttp.statusText
+                }
+
+                console.error(xhttp.statusText);
+            }
+        }
+    }
+
+    xhttp.onerror = function(){
+        console.error(xhttp.statusText);
+    };
+
+
+    xhttp.send(formData);
 }

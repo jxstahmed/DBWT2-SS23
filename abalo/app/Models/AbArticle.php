@@ -18,4 +18,15 @@ class AbArticle extends Model
     ];
 
     public $timestamps = false;
+
+    protected $appends = ["image"];
+
+    public function getImageAttribute() {
+        $bild = glob("articlesimages/{$this->id}.*");
+        if(empty($bild[0]) === false) {
+            return $bild[0];
+        } else {
+            return null;
+        }
+    }
 }
