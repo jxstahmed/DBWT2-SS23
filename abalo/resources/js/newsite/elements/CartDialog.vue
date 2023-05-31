@@ -34,11 +34,11 @@
         <tr v-for="(item, index) in item_payload.items" :key="`item_${index}`">
 
           <td style="vertical-align: middle;" class="text-font-caption-less">
-            @{{ item.ab_name }}
+            {{ item.ab_name }}
           </td>
 
           <td style="vertical-align: middle" class="text-font-caption-less">
-            @{{ `${item.ab_price / 1000}€` }}
+            {{ `${item.ab_price / 1000}€` }}
           </td>
 
           <td>
