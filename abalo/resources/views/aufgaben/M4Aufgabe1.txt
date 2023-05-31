@@ -1,0 +1,8 @@
+Durch die Aktivierung des Vue.js Plugins, welches von PHPSTORM zur Verfügung gestellt wird, kann sowohl Zeit eingespart als auch ein Code mit höherer Qualität geschrieben werden.
+
+Dies ist möglich durch folgende Vorteile des Plugins:
+- Vervollständigung für Komponenten, Direktiven, Requisiten und Methoden in Vorlagen
+- Code Hilfe für verschiedene Sprachen innerhalb von Template-, Script- und Style-Tags in .vue-Dateien
+- Sammlung von Code-Snippets für Vue.js
+- Navigation von Komponenten, Direktiven und Event-Handlern zu deren Definition
+- Durch das Plugin ist es möglich, Vue Componen Files anzulegen, welche bereits eine Vorlage für ein View File besitzt.
