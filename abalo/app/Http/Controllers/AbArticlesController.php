@@ -13,10 +13,10 @@ class AbArticlesController extends Controller {
         $search = $request->get("search");
 
         if (empty($search) === true) {
-            $articles = AbArticle::all();
+            $articles = AbArticle::all()->take(5);
         } else {
             $search = strtolower($search);
-            $articles = AbArticle::select("id", "ab_name", "ab_price", "ab_description")->where(AbArticle::raw('lower(ab_name)'), 'like', '%' . $search . '%')->get();
+            $articles = AbArticle::select("id", "ab_name", "ab_price", "ab_description")->where(AbArticle::raw('lower(ab_name)'), 'like', '%' . $search . '%')->take(5)->get();
         }
 
         return view('/articles.articles')->with('articles', $articles);

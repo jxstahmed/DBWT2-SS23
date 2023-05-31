@@ -29,4 +29,8 @@ class AbArticle extends Model
             return null;
         }
     }
+
+    public function cart_item() {
+        return $this->hasOne(ShoppingCartItem::class, 'ab_article_id', 'id');
+    }
 }

@@ -11,18 +11,35 @@ use Illuminate\Support\Facades\Validator;
 
 class ArticlesAPIController extends Controller {
     public function getArticles_api(Request $request) {
+        $creator_id = 1;
         $search = $request->get("search");
+        $page = $request->get("page");
 
-        $articles = AbArticle::select("id", "ab_name", "ab_price", "ab_description");
+
+        $articles = AbArticle::select("id", "ab_name", "ab_price", "ab_description")->take(5);
+
 
         if(empty($search) === false) {
             $search = strtolower($search);
             $articles = $articles->where(AbArticle::raw('lower(ab_name)'), 'like', '%' . $search . '%');
         }
 
+        $articles = $articles->with(["cart_item" => function($q) use ($creator_id) {
+            $q->whereHas("cart", function ($w) use ($creator_id) {
+                $w->where("ab_creator_id", $creator_id);
+            });
+        }]);
+
+        $total_count = $articles->count();
+
+        $rows_per_page = 5;
+        $rows_skipped = $page * $rows_per_page;
+        $articles = $articles->skip($rows_skipped)->take($rows_per_page);
+
+
         $articles = $articles->get();
 
-        return response()->json(["articles" => $articles], 200);
+        return response()->json(["articles" => $articles, "total_count" => $total_count], 200);
     }
 
     public function createArticles_api(Request $request) {

@@ -2,11 +2,16 @@ body {
     font-family: 'Nunito', sans-serif;;
 }
 
-.abalo_nav {
-
+.navigation-item {
+    color: #3498db;
+    text-decoration-line: underline;
 }
 
-.abalo_cookies_consent {
+.navigation-item:hover {
+    color: #236d9f;
+}
+
+.abalo-cookies-consent {
     position: fixed;
     bottom: 20px;
     right: 40px;
@@ -17,7 +22,7 @@ body {
     background: white;
 }
 
-.abalo_cart {
+.abalo-cart {
     position: fixed;
     bottom: 0px;
     left: 40px;
@@ -28,9 +33,9 @@ body {
     border-radius: 4px;
 }
 
-.abalo_shadow {
-    -webkit-box-shadow: 0 0 8px 2px rgba(0,0,0,0.1) !important;
-    -moz-box-shadow: 0 0 8px 2px rgba(0,0,0,0.1) !important;
+
+
+.abalo-shadow {
     box-shadow: 0 0 8px 2px rgba(0,0,0,0.1) !important;
     transition: box-shadow 0.2s ease-in-out;
 }
@@ -135,6 +140,7 @@ body {
 }
 
 .min-width-fit-content {
+    min-width: -moz-fit-content;
     min-width: fit-content;
 }
 
@@ -148,6 +154,12 @@ body {
     width: 8px !important;
     background: #232323 !important;
 }
+
+.clickable {
+    cursor: pointer;
+}
+
+
 
 
 ::-webkit-scrollbar {
@@ -163,11 +175,13 @@ body {
     background: #23232380;
     border-radius: 4px;
     width: 12px;
+    -webkit-transition: background 4.2s ease-in-out;
     transition: background 4.2s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #232323;
+    -webkit-transition: background 4.2s ease-in-out;
     transition: background 4.2s ease-in-out;
 }
 
@@ -178,5 +192,6 @@ input:-webkit-autofill:focus,
 input:-webkit-autofill:active{
     -webkit-box-shadow: 0 0 0 30px rgba(0,0,0,0) inset !important;
     -webkit-background-clip: text;
+    -webkit-transition: all 0s 50000s;
     transition: all 0s 50000s;
 }

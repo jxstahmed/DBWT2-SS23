@@ -2,68 +2,11 @@ const KEY_COOKIE_STATE = 'cookies_state';
 const KEY_CART = 'cart';
 
 
-// due to the assignment, we need to clear the cart
-// updateCart([])
-
-const navigation_items = [
-    {
-        text: "Home"
-    },
-    {
-        text: "Kategorien"
-    },
-    {
-        text: "Verkaufen"
-    },
-    {
-        text: "Unternehmen",
-        items: [
-            {
-                text: "Philosophie"
-            },
-            {
-                text: "Karriere"
-            }
-        ]
-    }
-];
-
-
-
 document.addEventListener("DOMContentLoaded", function () {
-    loadCart();
-    validateNav();
     validateCookiesConsent();
 
 });
 
-
-function validateNav() {
-    let nav = document.getElementById("nav");
-    // verify that our element exists
-    if (nav) {
-        // loop through our const items of the navigation (main items)
-        navigation_items.forEach(navItem => {
-            // just push the element with a normal text
-            let element_li = document.createElement('li');
-            element_li.innerText = navItem.text
-            nav.appendChild(element_li);
-
-            // if the item has subitems, then we loop through them
-            if (navItem.items && navItem.items.length > 0) {
-                // we have sub items, we allow only 1-level subitems!
-                // create another ul element and do the same process
-                let element_ul = document.createElement('ul');
-                navItem.items.forEach(subItem => {
-                    let element_li = document.createElement('li');
-                    element_li.innerText = subItem.text
-                    element_ul.appendChild(element_li);
-                });
-                nav.appendChild(element_ul);
-            }
-        })
-    }
-}
 
 function validateCookiesConsent() {
     // check if it was shown via the state
@@ -95,38 +38,6 @@ function cookiesResponse(userResponse) {
         // hide the element
         cookies_overlay.style.display = 'none';
     }
-}
-
-function loadCart() {
-    const xhttp = new XMLHttpRequest();
-    xhttp.open("GET", "/api/articles/shoppingcart");
-    xhttp.onreadystatechange = function() {
-        if(xhttp.readyState === 4) {
-            if(xhttp.status === 200) {
-                const response = JSON.parse(xhttp.responseText)
-                let items = response.items.map(e => {
-                    return {
-                        ab_name: e.article.ab_name,
-                        ab_price: e.article.ab_price,
-                        ab_description: e.article.ab_description,
-                        image: e.article.image,
-                        ab_shoppingcart_id: e.ab_shoppingcart_id,
-                        id: e.ab_article_id,
-                    }
-                })
-                updateCart(items)
-                validateCartViewItems();
-            } else {
-                console.error(xhttp.statusText);
-            }
-        }
-    }
-
-    xhttp.onerror = function(){
-        console.error(xhttp.statusText);
-    };
-
-    xhttp.send();
 }
 
 function getCart() {
@@ -188,7 +99,6 @@ function enqueueCart(payload) {
 
     xhttp.send(formData);
 }
-
 
 function dequeueCart(payload) {
     if(!payload) return;
@@ -272,7 +182,6 @@ function toggleCartViewItems() {
         }
     }
 }
-
 
 function loadCartViewItems() {
     const cart_items = getCart();

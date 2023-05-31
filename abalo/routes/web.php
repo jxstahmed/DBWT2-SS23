@@ -13,6 +13,10 @@ use App\Models\AbArticle;
 |
 */
 
+Route::get('/newsite', function () {
+    return view('newsite');
+});
+
 Route::get('/', function () {
     return view('home');
 });

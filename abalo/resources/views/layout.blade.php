@@ -95,6 +95,8 @@
     </div>
 </div>
 
+
+
 <footer>
     <hr>
     <ul>
@@ -102,6 +104,8 @@
         <li>Ahmed Jumaa &amp; Mohammad Hammado</li>
         <li id="impressum"><a href="/impressum">Impressum</a></li>
     </ul>
+
+
 </footer>
 
 
