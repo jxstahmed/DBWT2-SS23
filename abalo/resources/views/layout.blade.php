@@ -100,7 +100,7 @@
     <ul>
         <li>(c) Abalo GmbH</li>
         <li>Ahmed Jumaa &amp; Mohammad Hammado</li>
-        <li id="impressum"><a href="#impressum">Impressum</a></li>
+        <li id="impressum"><a href="/impressum">Impressum</a></li>
     </ul>
 </footer>
 

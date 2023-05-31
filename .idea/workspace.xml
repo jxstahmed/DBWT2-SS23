@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25196fc2-1a0c-41ba-b569-5736f7a84b90" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/78dc188c-200d-4910-a48f-93a719dabec7/storage_v2/_src_/database/abalo.4-2EBQ/schema/information_schema.FNRwLQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/78dc188c-200d-4910-a48f-93a719dabec7/storage_v2/_src_/database/abalo.4-2EBQ/schema/information_schema.FNRwLQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/78dc188c-200d-4910-a48f-93a719dabec7/storage_v2/_src_/database/abalo.4-2EBQ/schema/pg_catalog.0S1ZNQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/78dc188c-200d-4910-a48f-93a719dabec7/storage_v2/_src_/database/abalo.4-2EBQ/schema/pg_catalog.0S1ZNQ.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/78dc188c-200d-4910-a48f-93a719dabec7/storage_v2/_src_/database/abalo.4-2EBQ/schema/public.abK9xQ.meta" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/78dc188c-200d-4910-a48f-93a719dabec7/storage_v2/_src_/database/abalo.4-2EBQ/schema/public.abK9xQ.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abalo/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/resources/views/layout.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abalo/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,6 +180,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ahmed\PhpstormProjects\DBWT2\abalo\resources\views" />
       <recent name="C:\Users\Ahmed\PhpstormProjects\DBWT2\abalo\data" />
       <recent name="C:\Users\Ahmed\PhpstormProjects\DBWT2\abalo\resources\views\aufgaben" />
     </key>
@@ -225,7 +224,8 @@
       <workItem from="1681850547673" duration="42000" />
       <workItem from="1683733393332" duration="450000" />
       <workItem from="1685363170413" duration="2066000" />
-      <workItem from="1685544443343" duration="861000" />
+      <workItem from="1685544443343" duration="903000" />
+      <workItem from="1685545364013" duration="702000" />
     </task>
     <servers />
   </component>

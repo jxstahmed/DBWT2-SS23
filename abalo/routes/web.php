@@ -24,3 +24,7 @@ Route::get('/isloggedin', [App\Http\Controllers\AuthController::class, 'islogged
 Route::get('/articles', [App\Http\Controllers\AbArticlesController::class, 'getSearch']);
 Route::post('/articles', [App\Http\Controllers\AbArticlesController::class, 'createArticle']);
 Route::get('/newarticle', [App\Http\Controllers\AbArticlesController::class, 'getCreateArticleRouter'])->name("create_article");
+
+Route::get('/impressum', function () {
+    return view('impressum');
+});
