@@ -22,7 +22,7 @@ class SocketController extends Controller implements MessageComponentInterface
         parse_str($querystring,$queryarray);
 
 
-        $this->clients[$conn->resourceId] = ["email" => $queryarray["email"], "conn" => $conn];
+        $this->clients[$conn->resourceId] = ["email" => $queryarray["email"] ?? "undefined", "conn" => $conn];
         echo "New connection! ({$conn->resourceId}, {$queryarray["email"]})\n";
     }
 
@@ -73,7 +73,10 @@ class SocketController extends Controller implements MessageComponentInterface
     public function onClose(ConnectionInterface $conn) {
         // The connection is closed, remove it, as we can no longer send it messages
         echo "onClose\n";
-        $email = $this->clients[$conn->resourceId]["email"];
+        $email = isset($msg_parsed["email"]) === true ? $this->clients[$conn->resourceId]["email"] : "undefined email";
+
+
+
         unset($this->clients[$conn->resourceId]);
 
         echo "Connection {$conn->resourceId} ({$email}) has disconnected\n";
