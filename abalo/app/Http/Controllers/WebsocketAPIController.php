@@ -26,7 +26,7 @@ class WebsocketAPIController extends Controller
     public function enableMaintenance_api(Request $request) {
         Log::debug("Trying to emit a message to the broadcaster.");
 
-        connect('ws://localhost:8085/broadcast')->then(function($conn) {
+        connect('ws://localhost:8085/broadcast?email=none')->then(function($conn) {
             $conn->on('message', function($msg) use ($conn) {
                 Log::debug("Message has been received.");
                 Log::debug($msg);
