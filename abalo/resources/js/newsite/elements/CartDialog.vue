@@ -54,7 +54,6 @@
 </template>
 <script>
 export default {
-  props: ["cart-payload"],
   data() {
     return {
       item_payload: {
@@ -65,27 +64,29 @@ export default {
       }
     }
   },
-  emits: ["cart", "update:cart-payload"],
-  watch: {
-    cartPayload(newVal) {
-      if(newVal) {
-        let app = this
-        if(newVal.cart_item) {
-          // we should remove
-          app.dequeueCartItem(newVal)
-        } else {
-          // we should add
-          app.enqueueCartItem(newVal)
-        }
-      }
-    }
-  },
   mounted() {
     let app = this
 
+    app.$eventBus.on("cart", (payload) => app.onCartChanged(payload))
+
     app.loadCart()
   },
+  beforeUnmount() {
+    let app = this
+
+    app.$eventBus.off("cart")
+  },
   methods: {
+    onCartChanged(payload) {
+      let app = this
+      if(payload.cart_item) {
+        // we should remove
+        app.dequeueCartItem(payload)
+      } else {
+        // we should add
+        app.enqueueCartItem(payload)
+      }
+    },
     toggleCartDialog() {
       let app = this
 
@@ -139,7 +140,6 @@ export default {
     enqueueCartItem(payload) {
       if(!payload) return
 
-      console.log(payload)
 
       let app = this
       let formData = new FormData();
@@ -150,21 +150,21 @@ export default {
       xhttp.onreadystatechange = function() {
         if(xhttp.readyState === 4) {
           if(xhttp.status === 200) {
-            payload.callback(true)
+            app.$eventBus.emit("cart-response", {state: true, item: payload})
             app.item_payload.items.push({
               id: payload.id,
               ab_name: payload.ab_name,
               ab_price: payload.ab_price,
             })
           } else {
-            payload.callback(false)
+            app.$eventBus.emit("cart-response", {state: false, item: payload})
             console.error(xhttp.statusText);
           }
         }
       }
 
       xhttp.onerror = function(){
-        payload.callback(false)
+        app.$eventBus.emit("cart-response", {state: false, item: payload})
         console.error(xhttp.statusText);
       };
 
@@ -180,17 +180,17 @@ export default {
       xhttp.onreadystatechange = function() {
         if(xhttp.readyState === 4) {
           if(xhttp.status === 200) {
-            payload.callback(false)
+            app.$eventBus.emit("cart-response", {state: false, item: payload})
             app.item_payload.items.splice(app.item_payload.items.findIndex(e => e.id === payload.id), 1)
           } else {
-            payload.callback(true)
+            app.$eventBus.emit("cart-response", {state: true, item: payload})
             console.error(xhttp.statusText);
           }
         }
       }
 
       xhttp.onerror = function(){
-        payload.callback(true)
+        app.$eventBus.emit("cart-response", {state: true, item: payload})
         console.error(xhttp.statusText);
       };
 

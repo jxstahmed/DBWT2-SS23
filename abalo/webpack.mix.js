@@ -13,8 +13,4 @@ const mix = require('laravel-mix');
 
 mix.js('resources/js/app.js', 'public/js').js('resources/js/articlesVue.js', 'public/js')
     .vue()
-    .css('resources/css/app.css', 'public/css');
-
-//mix.copyDirectory('resources/content', 'public/content');
-//mix.copyDirectory('resources/fonts', 'public/fonts');
-//mix.copyDirectory('resources/lang', 'public/lang');
+    .sass('resources/sass/app.scss', 'public/css');

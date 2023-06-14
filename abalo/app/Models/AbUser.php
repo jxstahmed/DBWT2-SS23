@@ -10,7 +10,6 @@ class AbUser extends Model
     protected $table = 'ab_user';
 
     protected $fillable = [
-
         'id',
         'ab_name',
         'ab_password',

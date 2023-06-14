@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AbUser;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 /**
@@ -11,9 +13,18 @@ use Illuminate\Http\Request;
 class AuthController extends Controller
 {
     public function login(Request $request) {
-        $request->session()->put('abalo_user', 'visitor');
-        $request->session()->put('abalo_mail', 'visitor@abalo.example.com');
-        $request->session()->put('abalo_time', time());
+        $user =  AbUser::where('ab_mail', $request->get("email"))->first();
+        if(empty($user) === false) {
+            $request->session()->put('abalo_user', $user->ab_name);
+            $request->session()->put('abalo_mail',  $user->ab_mail);
+            $request->session()->put('abalo_time', time());
+        } else {
+            $request->session()->put('abalo_user', 'visitor');
+            $request->session()->put('abalo_mail', 'visitor@abalo.example.com');
+            $request->session()->put('abalo_time', time());
+        }
+
+
         return redirect()->route('haslogin');
     }
 

@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\Models\AbArticle;
+use App\Models\AbUser;
 use App\Models\ShoppingCart;
 use App\Models\ShoppingCartItem;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Validator;
+use function Ratchet\Client\connect;
 
 class ArticlesAPIController extends Controller {
     public function getArticles_api(Request $request) {
@@ -16,7 +19,7 @@ class ArticlesAPIController extends Controller {
         $page = $request->get("page");
 
 
-        $articles = AbArticle::select("id", "ab_name", "ab_price", "ab_description")->take(5);
+        $articles = AbArticle::select("id", "ab_name", "ab_price", "ab_description", "ab_creator_id")->take(5);
 
 
         if(empty($search) === false) {
@@ -29,6 +32,7 @@ class ArticlesAPIController extends Controller {
                 $w->where("ab_creator_id", $creator_id);
             });
         }]);
+
 
         $total_count = $articles->count();
 
@@ -45,23 +49,26 @@ class ArticlesAPIController extends Controller {
     public function createArticles_api(Request $request) {
         $v = Validator::make($request->all(), array(
             'article_name' => 'required',
-            'article_price' => 'required|numeric|min:0',
+            'article_price' => 'required|numeric|min:1',
             'article_description' => 'required',
+            'email' => 'required',
         ));
 
         if ($v->fails()) {
-            return response()->json(["message" => "Please validate your input! " . implode(" | ", $v->messages()->all())], 200);
+            return response()->json(["message" => "Please validate your input! " . implode(" | ", $v->messages()->all())], 500);
         }
 
         $article_name = $request->get("article_name");
         $article_price = $request->get("article_price");
         $article_description = $request->get("article_description");
 
+        $user = AbUser::where("ab_mail", "email")->first();
+
         $article = AbArticle::create([
             "ab_name" => $article_name,
             "ab_price" => $article_price,
             "ab_description" => $article_description,
-            "ab_creator_id" => 1,
+            "ab_creator_id" => $user->id,
             "ab_createdate" => Carbon::now()
         ]);
 
@@ -146,5 +153,74 @@ class ArticlesAPIController extends Controller {
         $shopping_cart_item->delete();
 
         return response()->json(["message" => "Cart item has been deleted!"], 200);
+    }
+
+    public function sellArticle_api(Request $request, $articleId) {
+        Log::debug("Trying to emit a message to the broadcaster.");
+
+        $article = AbArticle::find($articleId);
+
+        if(empty($article) === true) {
+            return response()->json(["message" => "Der Artikel wurde nicht gefunden."], 500);
+        }
+
+        $user = AbUser::where("id", $article->ab_creator_id)->first();
+
+        if(empty($user) === true) {
+            return response()->json(["message" => "Der Verkäufer wurde nicht gefunden."], 500);
+        }
+
+        $title = $article->ab_name;
+        $message = "Großartig! Ihr Artikel $title wurde erfolgreich verkauf!“";
+
+        connect('ws://localhost:8085/broadcast?email=none')->then(function($conn) use ($user, $message) {
+            $conn->on('message', function($msg) use ($conn, $user, $message) {
+                Log::debug("Message has been received.");
+                Log::debug($msg);
+                $conn->close();
+            });
+            $conn->send(json_encode(["type" => "article_sold", "message" => $message, "email" => $user->ab_mail]));
+            $conn->close();
+        }, function ($e) {
+            Log::debug("Couldn't emit to the websocket.");
+            Log::debug($e->getMessage());
+        });
+
+        return response()->json(["message" => "Der Artikel wurde gekauft."], 200);
+    }
+
+
+    public function offerArticle_api(Request $request, $articleId) {
+        Log::debug("Trying to emit a message to the broadcaster.");
+
+        $article = AbArticle::find($articleId);
+
+        if(empty($article) === true) {
+            return response()->json(["message" => "Der Artikel wurde nicht gefunden."], 500);
+        }
+
+        $user = AbUser::where("id", $article->ab_creator_id)->first();
+
+        if(empty($user) === true) {
+            return response()->json(["message" => "Der Verkäufer wurde nicht gefunden."], 500);
+        }
+
+        $title = $article->ab_name;
+        $message = "„Der Artikel $title wird nun günstiger angeboten! Greifen Sie schnell zu";
+
+        connect('ws://localhost:8085/broadcast?email=none')->then(function($conn) use ($user, $message, $article) {
+            $conn->on('message', function($msg) use ($conn, $user, $message, $article) {
+                Log::debug("Message has been received.");
+                Log::debug($msg);
+                $conn->close();
+            });
+            $conn->send(json_encode(["type" => "article_offer", "message" => $message, "article_id" => $article->id, "creator_email" => $user->ab_mail]));
+            $conn->close();
+        }, function ($e) {
+            Log::debug("Couldn't emit to the websocket.");
+            Log::debug($e->getMessage());
+        });
+
+        return response()->json(["message" => "Der Artikel wurde angeboten."], 200);
     }
 }

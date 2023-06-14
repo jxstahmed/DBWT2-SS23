@@ -2,7 +2,7 @@
   <div class="container py-4">
     <div class="row">
       <div class="col-12 col-md-4 col-lg-3 col-xl-2">
-        <abalo-header @bus="onBusReceived($event)"></abalo-header>
+        <abalo-header></abalo-header>
       </div>
 
       <div class="col-12 col-md-8 col-lg-9 col-xl-10">
@@ -13,16 +13,30 @@
     </div>
   </div>
 
-  <abalo-footer @bus="onBusReceived($event)"></abalo-footer>
+  <abalo-footer></abalo-footer>
+
 </template>
 <script>
 export default {
+  components: {
+
+  },
   data() {
     return {
       item_payload: {
         currentComponent: null
       }
     }
+  },
+  mounted() {
+    let app = this
+
+    app.$eventBus.on("navigation", (payload) => app.onBusReceived(payload))
+  },
+  beforeUnmount() {
+    let app = this
+
+    app.$eventBus.off("navigation")
   },
   methods: {
     onBusReceived(payload) {

@@ -17,6 +17,8 @@ class AbArticle extends Model
       'ab_createdate'
     ];
 
+    protected $with = ["user"];
+
     public $timestamps = false;
 
     protected $appends = ["image"];
@@ -32,5 +34,8 @@ class AbArticle extends Model
 
     public function cart_item() {
         return $this->hasOne(ShoppingCartItem::class, 'ab_article_id', 'id');
+    }
+    public function user() {
+        return $this->belongsTo(AbUser::class, 'ab_creator_id', 'id');
     }
 }

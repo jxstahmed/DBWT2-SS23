@@ -16,9 +16,8 @@ return new class extends Migration
             $table->string('ab_name',80)->nullable(false);
             $table->double('ab_price')->nullable(false);
             $table->string('ab_description',1000)->nullable(false);
-            $table->unsignedBigInteger('ab_creator_id')->nullable(false);
             $table->timestamp('ab_createdate')->nullable(false);
-            $table->foreign('ab_creator_id')->references('id')->on('ab_user');
+            $table->unsignedBigInteger("ab_creator_id")->foreign('ab_creator_id')->references('id')->on('ab_user')->nullable();
         });
     }
 

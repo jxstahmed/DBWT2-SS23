@@ -1,62 +1,43 @@
 <template>
-  <span v-if="!currentComponent">
-    Welcome to Abalo
-  </span>
+  <Home v-if="!currentComponent || currentComponent === 'home'"></Home>
 
-  <CartDialog
-      @cart="onCartInlineReceived($event)"
-      :cart-payload="views_payload.articles_cart"
-      @update:cart-payload="views_payload.cart_articles = $event"
-      v-if="currentComponent === 'articles'"></CartDialog>
+  <CartDialog v-if="currentComponent === 'articles'"></CartDialog>
 
-  <Articles
-      @cart="onCartReceived($event)"
-      :cart-payload="views_payload.cart_articles"
-      @update:cart-payload="views_payload.articles_cart = $event"
-      v-if="currentComponent === 'articles'"></Articles>
+  <Articles v-if="currentComponent === 'articles'"></Articles>
+
+  <NewArticle v-if="currentComponent === 'newarticle'"></NewArticle>
 
   <Impressum v-if="currentComponent === 'impressum'"></Impressum>
 
   <CookiesConsent></CookiesConsent>
 </template>
 <script>
-import Impressum from "../elements/Impressum";
-import Articles from "../elements/Articles";
-import CartDialog from "../elements/CartDialog";
-import CookiesConsent from "../elements/CookiesConsent";
+import Home from "../elements/Home.vue";
+import Impressum from "../elements/Impressum.vue";
+import Articles from "../elements/Articles.vue";
+import CartDialog from "../elements/CartDialog.vue";
+import NewArticle from "../elements/NewArticle.vue";
+import CookiesConsent from "../elements/CookiesConsent.vue";
 
 export default {
   props: ["current-component"],
   components: {
+    Home,
     CookiesConsent,
     Articles,
     CartDialog,
-    Impressum
+    Impressum,
+    NewArticle
   },
   data() {
     return {
       item_payload: {},
       views_payload: {
-        articles_cart: null,
-        cart_articles: null
       }
     }
   },
   watch: {},
   methods: {
-    onCartInlineReceived(payload) {
-      if (!payload) return
-
-      let app = this
-      console.log("Weiterleiten")
-      app.views_payload.cart_articles = payload
-    },
-    onCartReceived(payload) {
-      if (!payload) return
-
-      let app = this
-      app.views_payload.articles_cart = payload
-    }
   }
 }
 </script>

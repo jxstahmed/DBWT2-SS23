@@ -1,0 +1,169 @@
+[2023-06-14 20:26:06] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:26:34] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:26:50] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:27:25] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:27:26] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel DeLorean DMC-12 wurde erfolgreich verkauf!“',
+  'email' => 'seller@abalo.example.com',
+)  
+[2023-06-14 20:27:41] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:27:42] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel Lotus Esprit S1 wurde erfolgreich verkauf!“',
+  'email' => 'seller2@abalo.example.com',
+)  
+[2023-06-14 20:28:51] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:28:52] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel FAfds wurde erfolgreich verkauf!“',
+  'email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:29:11] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:29:12] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel A wurde erfolgreich verkauf!“',
+  'email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:30:08] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:30:08] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel A wurde erfolgreich verkauf!“',
+  'email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:30:13] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:30:14] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel A wurde erfolgreich verkauf!“',
+  'email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:30:40] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:30:41] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel A wurde erfolgreich verkauf!“',
+  'email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:31:14] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:31:15] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel A wurde erfolgreich verkauf!“',
+  'email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:31:35] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:31:36] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel A wurde erfolgreich verkauf!“',
+  'email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:31:42] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:31:43] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel Af wurde erfolgreich verkauf!“',
+  'email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:32:22] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:32:23] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel A wurde erfolgreich verkauf!“',
+  'email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:32:58] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:32:59] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel A wurde erfolgreich verkauf!“',
+  'email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:33:05] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:33:06] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel FAfds wurde erfolgreich verkauf!“',
+  'email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:33:14] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:33:14] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel Af wurde erfolgreich verkauf!“',
+  'email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:46:48] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:46:49] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel A wurde erfolgreich verkauf!“',
+  'email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:47:15] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:47:16] local.DEBUG: array (
+  'type' => 'article_sold',
+  'message' => 'Großartig! Ihr Artikel AFD wurde erfolgreich verkauf!“',
+  'email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:53:21] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:53:22] local.DEBUG: array (
+  'type' => 'article_offer',
+  'message' => '„Der Artikel A wird nun günstiger angeboten! Greifen Sie schnell zu',
+  'article_id' => 31,
+  'creator_email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:53:32] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:53:33] local.DEBUG: array (
+  'type' => 'article_offer',
+  'message' => '„Der Artikel A wird nun günstiger angeboten! Greifen Sie schnell zu',
+  'article_id' => 31,
+  'creator_email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:54:15] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:54:16] local.DEBUG: array (
+  'type' => 'article_offer',
+  'message' => '„Der Artikel A wird nun günstiger angeboten! Greifen Sie schnell zu',
+  'article_id' => 31,
+  'creator_email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:54:39] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:54:40] local.DEBUG: array (
+  'type' => 'article_offer',
+  'message' => '„Der Artikel A wird nun günstiger angeboten! Greifen Sie schnell zu',
+  'article_id' => 31,
+  'creator_email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:54:44] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:54:45] local.DEBUG: array (
+  'type' => 'article_offer',
+  'message' => '„Der Artikel A wird nun günstiger angeboten! Greifen Sie schnell zu',
+  'article_id' => 31,
+  'creator_email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:54:56] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:54:57] local.DEBUG: array (
+  'type' => 'article_offer',
+  'message' => '„Der Artikel A wird nun günstiger angeboten! Greifen Sie schnell zu',
+  'article_id' => 31,
+  'creator_email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:55:24] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:55:25] local.DEBUG: array (
+  'type' => 'article_offer',
+  'message' => '„Der Artikel A wird nun günstiger angeboten! Greifen Sie schnell zu',
+  'article_id' => 31,
+  'creator_email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:55:31] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:55:32] local.DEBUG: array (
+  'type' => 'article_offer',
+  'message' => '„Der Artikel A wird nun günstiger angeboten! Greifen Sie schnell zu',
+  'article_id' => 31,
+  'creator_email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:55:52] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:55:52] local.DEBUG: array (
+  'type' => 'article_offer',
+  'message' => '„Der Artikel A wird nun günstiger angeboten! Greifen Sie schnell zu',
+  'article_id' => 31,
+  'creator_email' => 'admin@abalo.example.com',
+)  
+[2023-06-14 20:56:12] local.DEBUG: Trying to emit a message to the broadcaster.  
+[2023-06-14 20:56:13] local.DEBUG: array (
+  'type' => 'article_offer',
+  'message' => '„Der Artikel A wird nun günstiger angeboten! Greifen Sie schnell zu',
+  'article_id' => 31,
+  'creator_email' => 'admin@abalo.example.com',
+)  

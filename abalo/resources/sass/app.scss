@@ -1,0 +1,200 @@
+@import "typography";
+
+body {
+  font-family: 'Nunito', sans-serif;
+
+}
+
+@for $i from 1 through 3 {
+  .border-bottom-#{$i} { border-bottom: #{$i}px solid rgba(0, 0, 0, 0.05)}
+}
+
+
+
+$nav-item-color: #3498db;
+$nav-item-color-hover: #236d9f;
+
+.navigation-item {
+  color: $nav-item-color;
+  text-decoration-line: underline;
+
+}
+
+.navigation-item:hover {
+  color: $nav-item-color-hover;
+}
+
+.nav--menu {
+  border-left: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.nav--menu__ul {
+  list-style-type: circle !important;
+}
+
+.nav--menu__item {
+  @extend .navigation-item;
+}
+
+.nav--menu__item:hover {
+  color: $nav-item-color-hover;
+}
+
+.nav--menu__item--clickable {
+  cursor: pointer;
+}
+
+
+.nav--menu__item--normal {
+  color: #232323 !important;
+}
+
+
+.abalo-cookies-consent {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  width: 250px;
+  height: 275px;
+  border-radius: 4px;
+  z-index: 100;
+  background: white;
+
+}
+
+.abalo-cart {
+  position: fixed;
+  bottom: 0px;
+  left: 40px;
+  width: 300px;
+  height: 325px;
+  background: white;
+  z-index: 100;
+  border-radius: 4px;
+
+}
+
+
+
+@mixin shadow($type) {
+  @if $type == soft {
+    -webkit-box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1) !important;
+    -moz-box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1) !important;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.1) !important;
+  } @else {
+    -webkit-box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2) !important;
+    -moz-box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2) !important;
+    box-shadow: 0 0 8px 2px rgba(0, 0, 0, 0.2) !important;
+  }
+
+  transition: box-shadow 0.2s ease-in-out;
+}
+
+.abalo-shadow {
+
+  @include shadow(soft)
+}
+
+
+.fill-width {
+  width: 100% !important;
+
+}
+
+.fill-height {
+  height: 100% !important;
+
+}
+
+.flex-grow-1 {
+  flex-grow: 1;
+
+}
+
+.flex-grow-0 {
+  flex-grow: 0;
+
+}
+
+.min-width-fit-content {
+  min-width: fit-content;
+
+}
+
+/* scrollbar */
+::-webkit-scrollbar {
+  width: 3px;
+  background: transparent;
+
+}
+
+.scrollbar-show::-webkit-scrollbar {
+  width: 8px !important;
+  background: #232323 !important;
+
+}
+
+.clickable {
+  cursor: pointer;
+
+}
+
+
+::-webkit-scrollbar {
+  height: 8px;
+
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-left: none;
+
+}
+
+::-webkit-scrollbar-thumb {
+  background: #23232380;
+  border-radius: 4px;
+  width: 12px;
+  transition: background 4.2s ease-in-out;
+
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #232323;
+  transition: background 4.2s ease-in-out;
+
+}
+
+/* Remove autofill effect from Chrome */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgba(0, 0, 0, 0) inset !important;
+  -webkit-background-clip: text;
+  transition: all 0s 50000s;
+
+}
+
+
+
+.wrapper {
+  color: #000;
+}
+
+.content {
+  padding: 20px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  padding: 10px 20px;
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+}
