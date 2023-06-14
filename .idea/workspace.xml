@@ -5,9 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25196fc2-1a0c-41ba-b569-5736f7a84b90" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/DBWT2.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/DBWT2.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abalo/resources/views/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/resources/views/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/abalo/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abalo/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abalo/resources/js/newsite/elements/NewArticle.vue" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/resources/js/newsite/elements/NewArticle.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abalo/resources/views/aufgaben/M5Aufgaben.md" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/resources/views/aufgaben/M5Aufgaben.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/abalo/storage/logs/laravel.log" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/storage/logs/laravel.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/composer.phar" beforeDir="false" afterPath="$PROJECT_DIR$/abalo/composer.phar" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +152,18 @@
       <path value="$PROJECT_DIR$/abalo/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/abalo/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/abalo/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/abalo/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/abalo/vendor/league/flysystem-local" />
+      <path value="$PROJECT_DIR$/abalo/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/abalo/vendor/ratchet/rfc6455" />
+      <path value="$PROJECT_DIR$/abalo/vendor/ratchet/pawl" />
+      <path value="$PROJECT_DIR$/abalo/vendor/cboden/ratchet" />
+      <path value="$PROJECT_DIR$/abalo/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/abalo/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/abalo/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/abalo/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/abalo/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/abalo/vendor/react/cache" />
     </include_path>
   </component>
   <component name="ProjectId" id="2NbcqWcFKDYyQpAMEJ6sJOTlMUI" />
@@ -157,35 +174,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Ahmed/PhpstormProjects/DBWT2/abalo/artisan&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "credentialsType com.jetbrains.nodejs.remote.NodeJSCreateRemoteSdkForm": "SSH Configuration",
+    "last_opened_file_path": "C:/Program Files/nodejs/node.exe",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "C:/Program Files/nodejs/node",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "settings.nodejs",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Ahmed\PhpstormProjects\DBWT2\abalo" />
       <recent name="C:\Users\Ahmed\PhpstormProjects\DBWT2\abalo\resources\views" />
       <recent name="C:\Users\Ahmed\PhpstormProjects\DBWT2\abalo\data" />
       <recent name="C:\Users\Ahmed\PhpstormProjects\DBWT2\abalo\resources\views\aufgaben" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="PHP Script.Start Abalo">
     <configuration name="Start Abalo" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/abalo/artisan" scriptParameters="serve">
       <CommandLine>
         <PhpTestInterpreterSettings>
@@ -194,6 +214,20 @@
       </CommandLine>
       <method v="2" />
     </configuration>
+    <configuration name="Websocket" type="PhpLocalRunConfigurationType" factoryName="PHP Console" path="$PROJECT_DIR$/abalo/artisan" scriptParameters="websocket:init">
+      <CommandLine>
+        <PhpTestInterpreterSettings>
+          <option name="interpreterName" value="XAMPP PHP" />
+        </PhpTestInterpreterSettings>
+      </CommandLine>
+      <method v="2">
+        <option name="RunConfigurationTask" enabled="true" run_configuration_name="Start Abalo" run_configuration_type="PhpLocalRunConfigurationType" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="PHP Script.Start Abalo" />
+      <item itemvalue="PHP Script.Websocket" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -226,6 +260,9 @@
       <workItem from="1685363170413" duration="2066000" />
       <workItem from="1685544443343" duration="903000" />
       <workItem from="1685545364013" duration="702000" />
+      <workItem from="1686776265792" duration="1522000" />
+      <workItem from="1686777799466" duration="318000" />
+      <workItem from="1686778126474" duration="2236000" />
     </task>
     <servers />
   </component>

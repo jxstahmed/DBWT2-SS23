@@ -114,6 +114,18 @@
       <path value="$PROJECT_DIR$/abalo/vendor/fakerphp/faker" />
       <path value="$PROJECT_DIR$/abalo/vendor/doctrine/lexer" />
       <path value="$PROJECT_DIR$/abalo/vendor/doctrine/inflector" />
+      <path value="$PROJECT_DIR$/abalo/vendor/symfony/polyfill-php83" />
+      <path value="$PROJECT_DIR$/abalo/vendor/league/flysystem-local" />
+      <path value="$PROJECT_DIR$/abalo/vendor/evenement/evenement" />
+      <path value="$PROJECT_DIR$/abalo/vendor/ratchet/rfc6455" />
+      <path value="$PROJECT_DIR$/abalo/vendor/ratchet/pawl" />
+      <path value="$PROJECT_DIR$/abalo/vendor/cboden/ratchet" />
+      <path value="$PROJECT_DIR$/abalo/vendor/react/stream" />
+      <path value="$PROJECT_DIR$/abalo/vendor/react/socket" />
+      <path value="$PROJECT_DIR$/abalo/vendor/react/promise" />
+      <path value="$PROJECT_DIR$/abalo/vendor/react/event-loop" />
+      <path value="$PROJECT_DIR$/abalo/vendor/react/dns" />
+      <path value="$PROJECT_DIR$/abalo/vendor/react/cache" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />
