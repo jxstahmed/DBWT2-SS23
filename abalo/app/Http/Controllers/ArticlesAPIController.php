@@ -62,7 +62,7 @@ class ArticlesAPIController extends Controller {
         $article_price = $request->get("article_price");
         $article_description = $request->get("article_description");
 
-        $user = AbUser::where("ab_mail", "email")->first();
+        $user = AbUser::where("ab_mail", $request->get("email"))->first();
 
         $article = AbArticle::create([
             "ab_name" => $article_name,
